@@ -1,4 +1,5 @@
 # Integration test for core-apps
+[![Build Status](https://travis-ci.com/eXist-db/e2e-core.svg?branch=master)](https://travis-ci.com/eXist-db/e2e-core)
 
 These tests use [cypress.js](https://www.cypress.io) to inspect the pages of the default apps inside a running exist instance.
 
@@ -38,9 +39,11 @@ The autodeployed apps are:
     *   Collection Browser
     *   Package Manager
 
-A test scaffold for each of these can be found inside `cypress/integration` along with some boilerplate templates.
+A test scaffold for each of these can be found inside `cypress/integration` along with some boilerplate templates in `cypress/`.
 
 
 
 ## What this isn't
 Integration testing within a browser are not a good fit for performance testing of java code. For stress tests and performance tests, visit [e2e-exist](https://github.com/eXist-db/e2e-exist)
+
+This repo will never add apps that aren't in exist-db's auto-deploy folder on a fresh install. To add similar tests to your own apps, see the scaffolding of the [yeoman generator](https://github.com/eXist-db/generator-exist)

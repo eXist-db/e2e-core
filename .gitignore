@@ -1,2 +1,3 @@
 node_modules/
-cypress/videos/*.mp4
+cypress/videos/
+cypress/screenshots/

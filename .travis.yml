@@ -21,7 +21,6 @@ cache:
 before_install:
   - docker pull $img
   - docker create  --name exist-ci -p 8080:8080 $img
-  - npm prune
 
 install:
   - npm ci
