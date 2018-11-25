@@ -1,0 +1,36 @@
+notifications:
+  email: false
+
+language: node_js
+
+node_js:
+  - "node"
+
+env:
+  # - img=existdb/existdb:latest
+  - img=existdb/existdb:release
+
+services:
+  - docker
+
+cache:
+  npm: true
+  directories:
+    - ~/.cache
+
+before_install:
+  - docker pull $img
+  - docker create  --name exist-ci -p 8080:8080 $img
+  - npm prune
+
+install:
+  - npm ci
+
+before_script:
+  - docker start exist-ci
+  # exist needs time
+  - sleep 33
+  - docker ps
+
+script:
+  - cypress run
