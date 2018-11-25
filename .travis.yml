@@ -7,7 +7,7 @@ node_js:
   - "node"
 
 env:
-  # - img=existdb/existdb:latest
+  - img=existdb/existdb:latest
   - img=existdb/existdb:release
 
 services:
@@ -33,4 +33,4 @@ before_script:
   - docker ps
 
 script:
-  - cypress run
+  - cypress run --record --key $CYPRESS_RECORD_KEY
