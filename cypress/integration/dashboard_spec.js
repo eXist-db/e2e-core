@@ -2,32 +2,41 @@ describe('The dashboard', function() {
   it('should load', function() {
     // Go to Dashboad
     cy.visit('/dashboard/index.html')
-    // Tests go here …
 
   })
+  describe('login', function() {
+    before(function() {
+      cy.get('#user_label').click()
 
-  describe('Package Manager', function() {
-    it('should see Package Manager', function() {
-      // Go to Dashboad
-      cy.visit('/dashboard/index.html')
+      cy.get('#dijit_form_ValidationTextBox_0').type('admin')
+
+      cy.get('#dijit_form_Button_0_label').click()
+    })
+
+    // afterEach('close', function () {
+    //   cy.get('#inlineClose').click()
+    // })
+
+    it('should open Package Manager', function() {
+      // select Package Manager
+      cy.contains('Backup').click()
       // Tests go here …
+      // cy.url().should('include', '/dashboard/index.html')
+      cy.get('#inlineClose').click()
 
     })
-  })
 
-  describe('Collection Browser', function() {
     it('should see Collection Browser', function() {
-      // Go to Dashboad
-      cy.visit('/dashboard/index.html')
+      // Select Collection Browser
+      cy.contains('Collections').click()
       // Tests go here …
-
+      // cy.url().should('include', '/dashboard/index.html')
+      cy.get('#inlineClose')
     })
-  })
 
-  describe('Backup Central', function() {
-    it('should see Backup Central', function() {
-      // Go to Dashboad
-      cy.visit('/dashboard/index.html')
+    it.skip('should see Package Manager', function() {
+      // select Package Manager does not work with login from dashboard
+      cy.contains('Package Manager').click()
       // Tests go here …
 
     })

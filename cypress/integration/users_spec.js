@@ -1,8 +1,12 @@
 describe('User Manager', function() {
   it('should open', function() {
-    // Go to Dashboad
+    // Go to User Manager
     cy.visit('/usermanager/index.html')
-    // Tests go here …
-
+  })
+  describe('log in', function (){
+    it ('should log in', function () {
+      cy.get('#user').type('admin')
+      cy.get('.button').click()
+    })
   })
 })
