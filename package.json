@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/eXist-db/e2e-core#readme",
   "devDependencies": {
-    "cypress": "^3.1.2"
+    "cypress": "^3.1.3"
   }
 }
