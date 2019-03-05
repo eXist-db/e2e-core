@@ -1,5 +1,6 @@
 notifications:
   email: false
+  slack: exist-db:IXzUdqA0n11cnxaDz43ZQgdX
 
 language: node_js
 
@@ -21,14 +22,14 @@ cache:
 before_install:
   - docker pull $img
   - docker create  --name exist-ci -p 8080:8080 $img
+  - docker start exist-ci
 
 install:
   - npm ci
 
 before_script:
-  - docker start exist-ci
   # exist needs time
-  - sleep 33
+  - sleep 30
   - docker ps
 
 script:
