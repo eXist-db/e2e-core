@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Integration tests for exist-db auto-deploy applications",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress run",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,12 @@
   "homepage": "https://github.com/eXist-db/e2e-core#readme",
   "devDependencies": {
     "cypress": "^3.2.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "chai": "^4.2.0",
+    "chai-jquery": "^2.1.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11"
   }
 }

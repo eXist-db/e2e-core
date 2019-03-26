@@ -13,32 +13,28 @@ describe('The dashboard', function() {
       cy.get('#dijit_form_Button_0_label').click()
     })
 
-    // afterEach('close', function () {
-    //   cy.get('#inlineClose').click()
-    // })
+    afterEach('close', function () {
+       cy.get('#inlineClose').click()
+    })
 
-    it('should open Package Manager', function() {
-      // select Package Manager
+    it('should open Backup', function() {
       cy.contains('Backup').click()
       // Tests go here …
-      // cy.url().should('include', '/dashboard/index.html')
-      cy.get('#inlineClose').click()
-
+      cy.url().should('include', '/dashboard/index.html')
     })
 
     it('should see Collection Browser', function() {
       // Select Collection Browser
       cy.contains('Collections').click()
       // Tests go here …
-      // cy.url().should('include', '/dashboard/index.html')
-      cy.get('#inlineClose')
+      cy.url().should('include', '/dashboard/index.html')
     })
 
     it.skip('should see Package Manager', function() {
       // select Package Manager does not work with login from dashboard
       cy.contains('Package Manager').click()
       // Tests go here …
-
+      cy.url().should('include', '/dashboard/index.html')
     })
   })
 })
