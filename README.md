@@ -50,6 +50,7 @@ or
 
 Note the use of `--` to pass arguments to `npm test`
 
+!Warning! Cypress does not natively support shadow-dom elements, the provided custom commands still lack polish. 
 
 ## What this isn't
 Integration testing within a browser are not a good fit for performance testing of java code. For stress tests and performance tests, visit [e2e-exist](https://github.com/eXist-db/e2e-exist)
