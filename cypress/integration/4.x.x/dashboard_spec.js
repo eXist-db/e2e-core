@@ -1,4 +1,4 @@
-xdescribe('The dashboard', function() {
+describe('The dashboard', function() {
   it('should load', function() {
     // Go to Dashboad
     cy.visit('/dashboard/index.html')

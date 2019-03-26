@@ -15,16 +15,18 @@ npm i
 ```
 
 ## Running cypress
-To run the tests locally, navigate inside this folder in your CLI:
+When developing tests locally, navigate inside this folder in your CLI:
 use either:
 ```bash
 npx cypress open
 ```
 or
 ```bash
-npm test
+npm run cypress
 ```
-The tests are also executed on Travis.
+To bring up the interactive test client.
+
+Tests are also automatically executed on Travis.
 Test runs are linked to the [cypress dashboard](https://dashboard.cypress.io/#/projects/w23pgu/runs). To access the dashboard log-in with your Github credentials.
 
 ## What this is
@@ -33,14 +35,20 @@ This is to serve as a central place to develop e2e tests which will then be adde
 The autodeployed apps are:
 *   eXide
 *   monex
-*   Usermanager
+*   Usermanager (deprec.)
 *   Dashboard
-    *   Backup Central,
-    *   Collection Browser
-    *   Package Manager
+    *   Backup Central (deprec.)
+    *   Collection Browser (deprec.)
+    *   Package Manager (deprec.)
 
-A test scaffold for each of these can be found inside `cypress/integration` along with some boilerplate templates in `cypress/`.
+A test scaffold for each of these can be found inside `cypress/integration/*` along with some boilerplate templates in `cypress/`.
 
+We currently support two test suites, for the deprecated and upcoming new version of the Dashboard apps. Depending on your version of exist-db you need to execute the matching test suite, either:
+*   `npm test -- --spec "cypress/integration/4.x.x/**"`
+or
+*   `npm test -- --spec "cypress/integration/5.x.x/**"`
+
+Note the use of `--` to pass arguments to `npm test`
 
 
 ## What this isn't

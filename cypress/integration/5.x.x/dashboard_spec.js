@@ -5,6 +5,7 @@ describe('The dashboard', function() {
 
   })
   describe('admin login', function() {
+    // TODO avoid UI login when testing each component more fully
     before(function() {
       cy
       .get('existdb-launcher-app')

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Integration tests for exist-db auto-deploy applications",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress run",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",

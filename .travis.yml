@@ -8,8 +8,8 @@ node_js:
   - "node"
 
 env:
-  - img=existdb/existdb:latest
-  - img=existdb/existdb:release
+  - img=existdb/existdb:latest path=cypress/integration/5.x.x/**
+  - img=existdb/existdb:release path=cypress/integration/4.x.x/**
 
 services:
   - docker
@@ -33,4 +33,4 @@ before_script:
   - docker ps
 
 script:
-  - cypress run --record --key $CYPRESS_RECORD_KEY
+  - cypress run --record --key $CYPRESS_RECORD_KEY --spec $path
