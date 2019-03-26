@@ -4,7 +4,7 @@ describe('The dashboard', function() {
     cy.visit('/dashboard/index.html')
 
   })
-  describe('login', function() {
+  describe('admin login', function() {
     before(function() {
       cy
       .get('existdb-launcher-app')
@@ -12,30 +12,49 @@ describe('The dashboard', function() {
       .shadowFind('a#login')
       .shadowClick()
       .url().should('include', '/dashboard/login.html')
+      .get('#user').type('admin')
+      .get('.button').click()
+      .url().should('include', '/dashboard/admin#/launcher')
     })
 
-    // afterEach('close', function () {
-    //    cy.get('#inlineClose').click()
-    // })
-
-    it.skip('should open Backup', function() {
-      cy.contains('Backup').click()
-      // Tests go here …
-      cy.url().should('include', '/dashboard/index.html')
+    it('should enable package manager', function() {
+      cy
+      .get('body')
+      .shadowGet('app-drawer-layout')
+      .shadowFind('paper-item#packageManagerItem').shadowClick()
+      .url().should('include', 'dashboard/admin#/packagemanager')
     })
 
-    it.skip('should see Collection Browser', function() {
-      // Select Collection Browser
-      cy.contains('Collections').click()
-      // Tests go here …
-      cy.url().should('include', '/dashboard/index.html')
+    it('should enable user manager', function() {
+      cy
+      .get('body')
+      .shadowGet('app-drawer-layout')
+      .shadowFind('paper-item#userManagerItem').shadowClick()
+      .url().should('include', 'dashboard/admin#/usermanager')
     })
 
-    it.skip('should see Package Manager', function() {
-      // select Package Manager does not work with login from dashboard
-      cy.contains('Package Manager').click()
-      // Tests go here …
-      cy.url().should('include', '/dashboard/index.html')
+    it('should enable backup', function() {
+      cy
+      .get('body')
+      .shadowGet('app-drawer-layout')
+      .shadowFind('paper-item#backupItem').shadowClick()
+      .url().should('include', 'dashboard/admin#/backup')
+    })
+
+    it('should enable settings', function() {
+      cy
+      .get('body')
+      .shadowGet('app-drawer-layout')
+      .shadowFind('paper-item#settingsItem').shadowClick()
+      .url().should('include', 'dashboard/admin#/settings')
+    })
+
+    after(function() {
+      cy
+      .get('body')
+      .shadowGet('app-drawer-layout')
+      .shadowFind('paper-item#logout').shadowClick()
+      .url().should('include', 'dashboard/index.html?logout=true')
     })
   })
 })

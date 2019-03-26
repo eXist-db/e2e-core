@@ -1,4 +1,4 @@
-describe.skip('User Manager', function() {
+xdescribe('User Manager', function() {
   it('should open', function() {
     // Go to User Manager
     cy.visit('/usermanager/index.html')
