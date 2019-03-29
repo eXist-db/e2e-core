@@ -14,16 +14,15 @@ describe('Monex', function() {
     })
 
   })
-  // Pending since index pages have console error
-  // see https://github.com/eXist-db/monex/issues/60
-  xdescribe('profiling', function () {
+  describe('profiling', function () {
     it ('should load Query Profiling', function () {
       cy.visit('/monex/profiling.html')
       cy.get('[href="?action=enable"]').click()
+      cy.get('[href="?action=refresh"]').click()
       cy.contains('/db/apps/monex/controller.xql')
     })
   })
-  xdescribe('indexes', function () {
+  describe('indexes', function () {
     it ('should load Browse Indexes', function () {
       cy.visit('/monex/indexes.html')
       cy.contains('/db/apps/monex')
