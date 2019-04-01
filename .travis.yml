@@ -8,8 +8,8 @@ node_js:
   - "node"
 
 env:
-  - img=existdb/existdb:latest path=cypress/integration/5.x.x/**
-  - img=existdb/existdb:release path=cypress/integration/4.x.x/**
+  - img=existdb/existdb:latest path="cypress/integration/5.x.x/**"
+  - img=existdb/existdb:release path="cypress/integration/4.x.x/**"
 
 services:
   - docker
