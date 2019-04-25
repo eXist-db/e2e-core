@@ -2,7 +2,6 @@ describe('The dashboard', function() {
   it('should load', function() {
     // Go to Dashboad
     cy.visit('/dashboard/index.html')
-
   })
   describe('admin login', function() {
     // TODO avoid UI login when testing each component more fully
