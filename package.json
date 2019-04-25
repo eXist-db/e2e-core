@@ -25,10 +25,10 @@
     "cypress": "^3.2.0"
   },
   "dependencies": {
-    "bluebird": "^3.5.3",
+    "bluebird": "^3.5.4",
     "chai": "^4.2.0",
     "chai-jquery": "^2.1.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "lodash": "^4.17.11"
   }
 }
