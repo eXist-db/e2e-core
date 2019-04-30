@@ -1,5 +1,5 @@
 # Integration test for core-apps
-[![Build Status](https://travis-ci.com/eXist-db/e2e-core.svg?branch=master)](https://travis-ci.com/eXist-db/e2e-core)
+[![Build Status](https://travis-ci.com/eXist-db/e2e-core.svg?branch=master)](https://travis-ci.com/eXist-db/e2e-core)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbf3f43632c74320ae9c889cc2a689ab)](https://www.codacy.com/app/eXist-db/e2e-core_2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=eXist-db/e2e-core&amp;utm_campaign=Badge_Grade)
 
 These tests use [cypress.js](https://www.cypress.io) to inspect the pages of the default apps inside a running exist instance.
 
@@ -50,7 +50,7 @@ or
 
 Note the use of `--` to pass arguments to `npm test`
 
-!Warning! Cypress does not natively support shadow-dom elements, the provided custom commands still lack polish. 
+!Warning! Cypress does not natively support shadow-dom elements, the provided custom commands still lack polish.
 
 ## What this isn't
 Integration testing within a browser are not a good fit for performance testing of java code. For stress tests and performance tests, visit [e2e-exist](https://github.com/eXist-db/e2e-exist)
