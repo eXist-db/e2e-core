@@ -4,7 +4,7 @@
 These tests use [cypress.js](https://www.cypress.io) to inspect the pages of the default apps inside a running exist instance.
 
 ## Requirements
-*   node >= `8`
+*   node >= `10`
 *   for local development a running exist instance:
     *   at port: `8080`
     *   with default admin user and pw
