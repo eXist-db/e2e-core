@@ -45,7 +45,7 @@ describe('Monex', function() {
       cy.visit('/monex/console.html')
         .wait(1000)
         .url().should('include', '/monex/console.html')
-      cy.get('#status').should('be.visible')
+      cy.get('#status').should('be.visible').contains('Connected')
     })
   })
   describe('data visualizer', function () {

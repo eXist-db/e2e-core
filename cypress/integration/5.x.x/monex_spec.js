@@ -45,9 +45,25 @@ describe('Monex', function() {
       cy.visit('/monex/console.html')
         .wait(1000)
         .url().should('include', '/monex/console.html')
-      cy.get('#status').should('be.visible')
+      cy.get('#status').should('be.visible').contains('Connected')
+    })
+    it ('should show log message', function() {
+        cy.visit('/monex/console.html')
+        cy.get('#status').should('be.visible').contains('Connected')
+        cy.request({
+            method: 'POST',
+            url: '/eXide/execute',
+            body: {
+                'qu': 'import module namespace console="http://exist-db.org/xquery/console"; console:log("TEST")'
+            },
+            form: true
+        }).then(function(response) {
+            cy.log("response received", response)
+            cy.wait(1500).get('#console td.message').contains('TEST')
+        })
     })
   })
+
   describe('data visualizer', function () {
     it ('should load data visualizer', function () {
       cy.visit('/monex/visualizer.html')
