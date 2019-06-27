@@ -6,10 +6,17 @@ language: node_js
 
 node_js:
   - "node"
+  - "10"
 
+dist: xenial
+# temporary see https://github.com/cypress-io/cypress/issues/4069
+addons:
+  apt:
+    packages:
+    - libgconf-2-4
 env:
-  - img=existdb/existdb:latest path="cypress/integration/5.x.x/**"
-  - img=existdb/existdb:release path="cypress/integration/4.x.x/**"
+  - img=existdb/existdb:latest spec="5.x.x/**"
+  - img=existdb/existdb:release spec="4.x.x/**"
 
 services:
   - docker
@@ -33,4 +40,4 @@ before_script:
   - docker ps
 
 script:
-  - cypress run --record --key $CYPRESS_RECORD_KEY --spec $path
+  - cypress run --record --key $CYPRESS_RECORD_KEY --spec \'cypress/integration/${spec}\'
