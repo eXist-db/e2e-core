@@ -16,7 +16,8 @@ addons:
     - libgconf-2-4
 env:
   - img=existdb/existdb:latest spec="5.x.x/**"
-  - img=existdb/existdb:release spec="4.x.x/**"
+  - img=existdb/existdb:release spec="5.x.x/**"
+  - img=existdb/existdb:4.7.1 spec="4.x.x/**"
 
 services:
   - docker
